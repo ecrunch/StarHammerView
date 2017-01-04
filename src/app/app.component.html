@@ -1,3 +1,22 @@
 <h1>
-  {{title}}
+    {{title}}
 </h1>
+<span style="display:flex; align-items:initial;">
+<div class="container" style="width:20%">
+    <hr>
+    <h3>Enter a name</h3>
+    <input type="text" name="stock" [(ngModel)]="stock" />
+    <button (click)="addStock()">Add a Stock</button>
+</div>
+<div class="container" style="width:80%; padding-left: 1%; ">
+  <hr>
+  <li class="item" *ngFor="let stock of stocks">
+  	{{stock.Name}} 
+  	<br>
+  	{{stock.Symbol}} 
+  	<br>
+  	{{stock.Historical_Data[0].Close}}
+  	<button (click)="addHistorical(stock.Symbol)">Add Historical</button>
+  </li>
+</div>
+</span>
